@@ -20,26 +20,33 @@ keys.forEach(function (key) {
 });
 
 // Write named functions that change the color of the keys below
-const keyPlay = (ev) => {
-	ev.target.style.backgroundColor = "blue";
+const keyPlay = (event) => {
+	event.target.style.backgroundColor = "blue";
+};
+const keyReturn = (event) => {
+	event.target.style.backgroundColor = "";
 };
 
 // Write a named function with event handler properties
-const keyReturn = (ev) => {
-	ev.target.style.backgroundColor = "";
-};
-
-const usefulFunction = (note) => {
+let eventAssignment = (note) => {
 	note.onmousedown = () => {
-		keyPlay(ev);
+		keyPlay(event);
 	};
 	note.onmouseup = () => {
-		keyReturn(ev);
+		keyReturn(event);
 	};
 };
+// let usefulFunction = (note) => {
+// 	note.onmousedown = () => {
+// 		keyPlay(ev);
+// 	};
+// 	note.onmouseup = () => {
+// 		keyReturn(ev);
+// 	};
+// };
 
 // Write a loop that runs the array elements through the function
-notes.forEach(usefulFunction);
+notes.forEach(eventAssignment);
 
 // These variables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById(
@@ -66,6 +73,9 @@ nextThree.hidden = true;
 startOver.hidden = true;
 
 // Write anonymous event handler property and function for the first progress button
+nextOne.onclick = () => {
+	//
+};
 
 // Write anonymous event handler property and function for the second progress button
 
